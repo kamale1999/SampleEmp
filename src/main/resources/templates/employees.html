@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Exam Question 2.1</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+
+	<div>
+			<h1> Employees </h1>
+			<a th:href = "@{/Employees/new}"> Add Employee</a>
+			<table th:action="@{/emp/Employees}" th:object="${Employee}" border="1">
+			<thead>
+				<tr>
+					<th> Employee First Name</th>
+					<th> Employee Department</th>
+					<th> Employee DOJ</th>
+					<th> Employee Address </th>
+					<th> State And City </th>
+					<th> Action</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each = "employee: ${employees}">
+					<td th:text = "${employee.ename}"></td>
+					<td th:text = "${employee.department}"></td>
+					<td th:text = "${employee.doj}"></td>
+					<td th:text = "${employee.address}"></td>
+					<td th:text = "${employee.stateAndCity}"></td>
+				</tr>
+			</tbody>
+		
+		</table>
+		
+	</div>
+</body>
+</html>
